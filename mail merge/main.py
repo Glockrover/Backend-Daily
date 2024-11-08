@@ -15,8 +15,8 @@ def main():
         message = open_letter(letter)
         for names in file:
             x = message.replace("[name]", names)
-            with open("ReadyToSend.txt", "w") as file:
-                file.writelines(x)
+            with open("ReadyToSend.txt", "a") as file:
+                file.write(f"{x}\n\n--------------------------------------\n\n")
     except:
         raise FileNotFoundError
 
